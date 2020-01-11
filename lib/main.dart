@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'screens/home.dart';
 
-void main() {
-  runApp(Center(
-    child: Text(
-      "Hello World",
-      textAlign: TextAlign.center,
-      textDirection: TextDirection.ltr,
-    ),
+void main(){
+  runApp(MaterialApp(
+    title: "Flutter App",
+    home: Home(),
   ));
 }
