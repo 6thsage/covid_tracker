@@ -1,42 +1,58 @@
 import 'package:flutter/material.dart';
-// import 'screens/home.dart';
 
 void main() {
   runApp(MaterialApp(
-    title: "Flutter App",
-    home: Scaffold(
-      body: listView(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          debugPrint('FAB clicked');
-        },
-        child: Icon(Icons.add),
-      ),
-    ),
+    home: GetUserInput(),
   ));
 }
 
-void showSnackBar(BuildContext context, String item) {
-  var snackBar = SnackBar(
-    content: Text('You have clicked $item'),
-  );
-  Scaffold.of(context).showSnackBar(snackBar);
+class GetUserInput extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _FlightDetails();
+  }
 }
 
-List<String> generateListItems() {
-  var items = List<String>.generate(100, (counter) => 'Item $counter');
-  return items;
-}
+class _FlightDetails extends State<GetUserInput> {
+  String nameInput = '';
+  var _countries = ['Kenya', 'Uganda', 'Tanzania'];
+  var currentlySelectedItem = 'Kenya';
 
-Widget listView() {
-  var listItems = generateListItems();
-  var ourListView = ListView.builder(itemBuilder: (context, index) {
-    return ListTile(
-      title: Text(listItems[index]),
-      onTap: () {
-        showSnackBar(context, listItems[index]);
-      },
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: (Text('App Title')),
+      ),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            TextField(
+              
+              onSubmitted: (String userInput) {
+                setState(() {
+                  nameInput = userInput;
+                });
+              },
+            ),
+            DropdownButton<String>(
+              items: _countries.map((String singleCountryItem){
+                return DropdownMenuItem<String>(
+                  value: singleCountryItem,
+                  child: Text(singleCountryItem),
+                );
+              }).toList(),
+              onChanged: (String newValueSelected){
+                setState(() {
+                  currentlySelectedItem = newValueSelected;
+                });
+              },
+              value: currentlySelectedItem,
+            ),
+            Text('Your City is $nameInput')
+          ],
+        ),
+      ),
     );
-  });
-  return ourListView;
+  }
 }
