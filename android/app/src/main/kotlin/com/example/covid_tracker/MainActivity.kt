@@ -1,4 +1,4 @@
-package com.example.flutter_experiments
+package com.example.covid_tracker
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
