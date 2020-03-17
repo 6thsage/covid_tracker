@@ -56,3 +56,7 @@ class AppTitle extends StatelessWidget {
     );
   }
 }
+
+// class DataCard extends StatelessWidget{
+
+// }
