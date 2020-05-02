@@ -13,3 +13,5 @@ final greenText = Color(0xff00AE90);
 final countriesBackgroundColor = Color(0xffDDE8F7);
 
 final appBackgroundColor = Color(0xffFEFEFE);
+
+final textColor = Color(0xff111517);

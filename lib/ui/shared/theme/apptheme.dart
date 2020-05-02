@@ -1,4 +1,4 @@
-import 'package:covid_tracker/shared/theme/colors.dart';
+import 'package:covid_tracker/ui/shared/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 // final iosAppTheme = CupertinoThemeData(
@@ -18,7 +18,7 @@ ThemeData buildTheme() {
     //   TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
     //   TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
     // }),
-    //cyan
+
     accentColor: confirmedCasesBackgroundColor,
     primaryColor: recoveredBackgroundColor,
     backgroundColor: appBackgroundColor,
@@ -35,15 +35,34 @@ ThemeData buildTheme() {
 TextTheme _androidTextTheme(TextTheme base) {
   return base
       .copyWith(
-        headline3: base.headline3.copyWith(fontWeight: FontWeight.w600),
-        subtitle1: base.subtitle1.copyWith(fontWeight: FontWeight.w400),
-        subtitle2: base.subtitle2.copyWith(fontWeight: FontWeight.w400),
+        headline3: base.headline3
+            .copyWith(fontSize: 34.0, fontWeight: FontWeight.w700),
+        //mainly used on the AppBar titles
+        headline4: base.headline4
+            .copyWith(fontSize: 28.0, fontWeight: FontWeight.w700),
+        //use this for non-bold headlines accordingly as in the designs
+        headline5: base.headline5
+            .copyWith(fontSize: 24.0, fontWeight: FontWeight.w700),
+        //card titles
+        headline6: base.headline6
+            .copyWith(fontSize: 20.0, fontWeight: FontWeight.w700),
+
+        //section titles
+        subtitle1: base.subtitle1
+            .copyWith(fontSize: 18.0, fontWeight: FontWeight.w700),
+        //all subtitles
+        subtitle2: base.subtitle2
+            .copyWith(fontSize: 16.0, fontWeight: FontWeight.w400),
+
+        //paragraph text
+        bodyText2: base.bodyText2
+            .copyWith(fontSize: 14.0, fontWeight: FontWeight.w400),
+
+        //applicable where there are caption fonts sized
         caption:
             base.caption.copyWith(fontSize: 12.0, fontWeight: FontWeight.w400),
       )
-      .apply(
-        fontFamily: 'ProductSans',
-      );
+      .apply(fontFamily: 'ProductSans', displayColor: textColor);
 }
 
 // displayColor: healthcloudTextColor

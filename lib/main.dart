@@ -1,5 +1,5 @@
-import 'package:covid_tracker/pages/home/homepage.dart';
-import 'package:covid_tracker/shared/theme/apptheme.dart';
+import 'package:covid_tracker/ui/pages/home/homepage.dart';
+import 'package:covid_tracker/ui/shared/theme/apptheme.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
