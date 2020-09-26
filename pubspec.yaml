@@ -8,13 +8,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  async_redux: ^2.6.0
+  # async_redux: ^3.0.0
+  # graphql: ^3.0.0
+  redux: ^4.0.0+3
+  flutter_redux: ^0.6.0
+  redux_thunk: ^0.3.0
+  redux_api_middleware: ^0.2.1
   http: ^0.12.0+4
+  json_annotation: ^3.0.1
   cupertino_icons: ^0.1.2
+  analyzer: '0.39.14'
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^1.0.0
+  json_serializable: ^3.2.0
 
 flutter:
   uses-material-design: true
